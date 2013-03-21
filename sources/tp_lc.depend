@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1327135821 source:/users/promo-2014/berthelo/tplc/tp_lc/main.cpp
+	<iostream>
+
+1327625800 source:c:\users\chris\desktop\tp\main.cpp
+	<iostream>
+	<stdlib.h>
+	<vector>
+	<string.h>
+	<string>
+	<sstream>
+	<fstream>
+

@@ -1,0 +1,189 @@
+
+
+ ---------------------------------------------------------
+ ¦ FACTORISATION GAUCHE
+ ---------------------------------------------------------
+
+
+ Chargement du fichier ./factorisation1.txt...
+
+ Grammaire de base (sans factorisation gauche):
+
+ 0. E -> E+u | i
+ 1. T -> G-c | G-F | F
+
+
+ -------- NOUVELLE ANALYSE D'UNE REGLE --------
+
+
+
+ ------ Dection du motif de factorisation ------
+
+ - Le motif E est present 1 fois dans la regle.
+ On peut tenter mieux...
+ - Le motif E+ est present 1 fois dans la regle.
+ On peut tenter mieux...
+ - Le motif E+u est present 1 fois dans la regle.
+ On peut tenter mieux...
+ - Le motif E+u  est present 1 fois dans la regle.
+ On peut tenter mieux...
+ - Le motif E+u i est present 1 fois dans la regle.
+ On peut tenter mieux...
+ - Le motif E+u i  est present 1 fois dans la regle.
+ On peut tenter mieux...
+
+ Le motif final est donc "E+u i ".
+ Ce motif ce retrouve dans 1 instruction.
+ Cela est insuffisant. On a donc aucun motif pour cette regle.
+
+
+ Instruction de la regle en cours d'analyse:
+
+  |- V[0] = E+u
+  |- V[1] = i
+
+ Motif de factorisation inexistant... On recopie la regle originale!
+
+
+
+ -------- NOUVELLE ANALYSE D'UNE REGLE --------
+
+
+
+ ------ Dection du motif de factorisation ------
+
+ - Le motif G est present 2 fois dans la regle.
+ On peut tenter mieux...
+ - Le motif G- est present 2 fois dans la regle.
+ On peut tenter mieux...
+ - Le motif G-c est present 1 fois dans la regle.
+ On est alle trop loin, on prend le motif d'avant, soit G-
+
+
+ Instruction de la regle en cours d'analyse:
+
+  |- V[0] = G-c
+  |- V[1] = G-F
+  |- V[2] = F
+
+ Vecteur des termes NON factorisables:
+
+  |- V[0] = F
+
+ Vecteur des termes factorisables:
+
+  |- V[0] = c
+  |- V[1] = F
+
+ Liste des regles remplacantes au final:
+
+ 0. E -> E+u | i
+ 1. G -> G-G' | F
+ 2. G' -> c | F
+
+ Grammaire traitee (factorisee a gauche):
+
+ 0. E -> E+u | i
+ 1. G -> G-G' | F
+ 2. G' -> c | F
+
+
+ Appuyez sur une [ N ] puis valider pour la suite des tests... n
+
+
+ ---------------------------------------------------------
+ ¦ FACTORISATION GAUCHE
+ ---------------------------------------------------------
+
+
+ Chargement du fichier ./factorisation2.txt...
+
+ Grammaire de base (sans factorisation gauche):
+
+ 0. E -> E+T | E+E | F
+ 1. T -> T*(E) | T*i | T* | i
+
+
+ -------- NOUVELLE ANALYSE D'UNE REGLE --------
+
+
+
+ ------ Dection du motif de factorisation ------
+
+ - Le motif E est present 2 fois dans la regle.
+ On peut tenter mieux...
+ - Le motif E+ est present 2 fois dans la regle.
+ On peut tenter mieux...
+ - Le motif E+T est present 1 fois dans la regle.
+ On est alle trop loin, on prend le motif d'avant, soit E+
+
+
+ Instruction de la regle en cours d'analyse:
+
+  |- V[0] = E+T
+  |- V[1] = E+E
+  |- V[2] = F
+
+ Vecteur des termes NON factorisables:
+
+  |- V[0] = F
+
+ Vecteur des termes factorisables:
+
+  |- V[0] = T
+  |- V[1] = E
+
+
+ -------- NOUVELLE ANALYSE D'UNE REGLE --------
+
+
+
+ ------ Dection du motif de factorisation ------
+
+ - Le motif T est present 3 fois dans la regle.
+ On peut tenter mieux...
+ - Le motif T* est present 3 fois dans la regle.
+ On peut tenter mieux...
+ - Le motif T*( est present 1 fois dans la regle.
+ On est alle trop loin, on prend le motif d'avant, soit T*
+
+
+ Instruction de la regle en cours d'analyse:
+
+  |- V[0] = T*(E)
+  |- V[1] = T*i
+  |- V[2] = T*
+  |- V[3] = i
+
+ Vecteur des termes NON factorisables:
+
+  |- V[0] = i
+
+ Vecteur des termes factorisables:
+
+  |- V[0] = (E)
+  |- V[1] = i
+  |- V[2] = #
+
+ Liste des regles remplacantes au final:
+
+ 0. E -> E+E' | F
+ 1. E' -> T | E
+ 2. T -> T*T' | i
+ 3. T' -> (E) | i | #
+
+ Grammaire traitee (factorisee a gauche):
+
+ 0. E -> E+E' | F
+ 1. E' -> T | E
+ 2. T -> T*T' | i
+ 3. T' -> (E) | i | #
+
+
+ -- MERCI ET A BIENTOT --
+
+ Suppression donnees dynamiques...
+
+
+Process returned 0 (0x0)   execution time : 6.582 s
+Press any key to continue.

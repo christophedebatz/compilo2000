@@ -1,0 +1,261 @@
+
+ ¦ LANGAGE ET COMPILATION | TP 2
+ ¦ DESAMBIGUEUR LEXICAL C/C++
+ ¦ ---------------------------------------------------------
+ ¦ CHRISTOPHE DE BATZ | L3  Groupe B
+ ¦ ---------------------------------------------------------
+ ¦ Le "epsilon" est remplace par le "diese" #
+
+
+
+ Appuyez sur une [ N ] puis valider pour commencer les tests... n
+
+
+ ---------------------------------------------------------
+ ¦ SUPPRESSION DE LA RECURSIVITE GAUCHE DIRECTE
+ ---------------------------------------------------------
+
+
+ Chargement du fichier ./language2.txt...
+
+ Grammaire de base (avec recursivite gauche directe):
+
+ 0. E -> E+T | T
+ 1. T -> T*F | F
+ 2. F -> (E) | a
+
+
+ -------- NOUVELLE ANALYSE RECURSIVITE GAUCHE DIRECTE --------
+
+
+ i = 2
+ fL = E et sL = E
+ E = E donc recursivite gauche directe sur E !
+
+
+ ------- Nouvelle regle a traiter --------
+
+ - Lettre de la regle = E
+ - ID de position = Regle #0
+
+ -----------------------------------------
+
+
+ Ensemble des Alpha:
+
+  |- V[0] = +T
+
+ Ensemble des Beta:
+
+  |- V[0] = T
+
+ Grammaire traitee sur E:
+
+ 0. E -> TE'
+ 1. E' -> +TE' | #
+ 2. T -> T*F | F
+ 3. F -> (E) | a
+
+
+ -------- NOUVELLE ANALYSE RECURSIVITE GAUCHE DIRECTE --------
+
+
+ i = 2
+ fL = E et sL = T
+ On avance l'analyse d'un caractere...
+
+
+ i = 3
+ fL = E et sL = T
+ On tombe sur un ";" donc fL = E' et sL = +T
+
+ i = 4
+ fL = E' et sL = +T
+ On avance l'analyse d'un caractere...
+
+
+ i = 5
+ fL = E' et sL = +T
+ On avance l'analyse d'un caractere...
+
+
+ i = 6
+ fL = E' et sL = +T
+ On avance l'analyse d'un caractere...
+
+
+ i = 7
+ fL = E' et sL = +T
+ On tombe sur un "|" donc sL = #
+
+ i = 8
+ fL = E' et sL = #
+ On avance l'analyse d'un caractere...
+
+
+ i = 9
+ fL = E' et sL = #
+ On tombe sur un ";" donc fL = T et sL = T
+
+ i = 10
+ fL = T et sL = T
+ T = T donc recursivite gauche directe sur T !
+
+
+ ------- Nouvelle regle a traiter --------
+
+ - Lettre de la regle = T
+ - ID de position = Regle #2
+
+ -----------------------------------------
+
+
+ Ensemble des Alpha:
+
+  |- V[0] = *F
+
+ Ensemble des Beta:
+
+  |- V[0] = F
+
+ Grammaire traitee sur T:
+
+ 0. E -> TE'
+ 1. E' -> +TE' | #
+ 2. T -> FT'
+ 3. T' -> *FT' | #
+ 4. F -> (E) | a
+
+
+ -------- NOUVELLE ANALYSE RECURSIVITE GAUCHE DIRECTE --------
+
+
+ i = 2
+ fL = E et sL = T
+ On avance l'analyse d'un caractere...
+
+
+ i = 3
+ fL = E et sL = T
+ On tombe sur un ";" donc fL = E' et sL = +T
+
+ i = 4
+ fL = E' et sL = +T
+ On avance l'analyse d'un caractere...
+
+
+ i = 5
+ fL = E' et sL = +T
+ On avance l'analyse d'un caractere...
+
+
+ i = 6
+ fL = E' et sL = +T
+ On avance l'analyse d'un caractere...
+
+
+ i = 7
+ fL = E' et sL = +T
+ On tombe sur un "|" donc sL = #
+
+ i = 8
+ fL = E' et sL = #
+ On avance l'analyse d'un caractere...
+
+
+ i = 9
+ fL = E' et sL = #
+ On tombe sur un ";" donc fL = T et sL = F
+
+ i = 10
+ fL = T et sL = F
+ On avance l'analyse d'un caractere...
+
+
+ i = 11
+ fL = T et sL = F
+ On avance l'analyse d'un caractere...
+
+
+ i = 12
+ fL = T et sL = F
+ On avance l'analyse d'un caractere...
+
+
+ i = 13
+ fL = T et sL = F
+ On tombe sur un ";" donc fL = T' et sL = *F
+
+ i = 14
+ fL = T' et sL = *F
+ On avance l'analyse d'un caractere...
+
+
+ i = 15
+ fL = T' et sL = *F
+ On avance l'analyse d'un caractere...
+
+
+ i = 16
+ fL = T' et sL = *F
+ On avance l'analyse d'un caractere...
+
+
+ i = 17
+ fL = T' et sL = *F
+ On tombe sur un "|" donc sL = #
+
+ i = 18
+ fL = T' et sL = #
+ On avance l'analyse d'un caractere...
+
+
+ i = 19
+ fL = T' et sL = #
+ On tombe sur un ";" donc fL = F et sL = (
+
+ i = 20
+ fL = F et sL = (
+ On avance l'analyse d'un caractere...
+
+
+ i = 21
+ fL = F et sL = (
+ On avance l'analyse d'un caractere...
+
+
+ i = 22
+ fL = F et sL = (
+ On avance l'analyse d'un caractere...
+
+
+ i = 23
+ fL = F et sL = (
+ On avance l'analyse d'un caractere...
+
+
+ i = 24
+ fL = F et sL = (
+ On tombe sur un "|" donc sL = a
+
+ i = 25
+ fL = F et sL = a
+ On avance l'analyse d'un caractere...
+
+
+
+ - Fin de la grammaire -
+
+
+ Nombre de regle(s) traitee(s) = 2
+
+ Grammaire traitee (sans recursivite gauche directe):
+
+ 0. E -> TE'
+ 1. E' -> +TE' | #
+ 2. T -> FT'
+ 3. T' -> *FT' | #
+ 4. F -> (E) | a
+
+
+ Appuyez sur une [ N ] puis valider pour la suite des tests...
